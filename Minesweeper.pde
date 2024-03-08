@@ -37,6 +37,7 @@ public void draw () {
     background(0);
     if (isWon()) {
         displayWinningMessage();
+    frameRate(0);
     }
 }
 
@@ -60,7 +61,6 @@ public void displayWinningMessage() {
     fill(0, 255, 0);
     textAlign(CENTER, CENTER); 
     text("You lose", width / 2, height / 2); 
-    frameRate(0);
 
 }
 
@@ -71,7 +71,6 @@ public void displayLosingMessage() {
     for (MSButton mine : mines) {
         mine.revealMine();
     }
-    frameRate(0);
 }
 
 public boolean isValid(int r, int c) {
@@ -118,6 +117,7 @@ public class MSButton {
         flagged = !flagged;
     } else if (mines.contains(this)) {
         displayLosingMessage();
+        frameRate(0);
     } else if (countMines(myRow, myCol) > 0) {
         setLabel(countMines(myRow, myCol));
     } else { 
