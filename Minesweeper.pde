@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public static final int  NUM_COLS = 20;
 public static final int NUM_ROWS = 20;
 public static final int NUM_MINES = 50;
+public boolean lose = false;
 private ArrayList<MSButton> mines = new ArrayList<MSButton>();
 private MSButton[][] buttons = new MSButton[NUM_ROWS][NUM_COLS];
 
@@ -38,7 +39,8 @@ public void draw () {
     if (isWon()) {
         displayWinningMessage();
     frameRate(0);
-    }
+    }else if(lose){
+            frameRate(0);
 }
 
 public boolean isWon() {
@@ -71,6 +73,7 @@ public void displayLosingMessage() {
     for (MSButton mine : mines) {
         mine.revealMine();
     }
+lose = true;
 }
 
 public boolean isValid(int r, int c) {
@@ -117,7 +120,6 @@ public class MSButton {
         flagged = !flagged;
     } else if (mines.contains(this)) {
         displayLosingMessage();
-        frameRate(0);
     } else if (countMines(myRow, myCol) > 0) {
         setLabel(countMines(myRow, myCol));
     } else { 
