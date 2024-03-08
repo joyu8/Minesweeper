@@ -39,8 +39,10 @@ public void draw () {
     if (isWon()) {
         displayWinningMessage();
     frameRate(0);
-    }else if(lose){
+    } 
+    if(lose){
             frameRate(0);
+    }
 }
 
 public boolean isWon() {
