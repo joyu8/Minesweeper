@@ -58,9 +58,7 @@ public boolean isWon() {
 
 public void displayWinningMessage() {
     fill(0, 255, 0);
-    textAlign(CENTER, CENTER);
-    text("You win!", width / 2, height / 2);
-    noLoop();
+
 }
 
 public void displayLosingMessage() { 
