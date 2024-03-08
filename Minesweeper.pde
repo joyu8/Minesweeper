@@ -58,7 +58,8 @@ public boolean isWon() {
 
 public void displayWinningMessage() {
     fill(0, 255, 0);
-
+    textAlign(CENTER, CENTER); 
+    text("You lose", width / 2, height / 2); 
 }
 
 public void displayLosingMessage() { 
@@ -68,7 +69,6 @@ public void displayLosingMessage() {
     for (MSButton mine : mines) {
         mine.revealMine();
     }
-    noLoop();
 }
 
 public boolean isValid(int r, int c) {
