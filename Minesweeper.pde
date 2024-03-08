@@ -109,7 +109,7 @@ public class MSButton {
 
    public void mousePressed() {
     if (clicked) {
-        return; // Don't allow flagging or further actions on already revealed buttons
+        return;
     }
     
     clicked = true;
